@@ -47,5 +47,20 @@ vi ~/meta.yaml
     ssh-authorized-keys:
       - ssh-ed25519
 ```
+![](https://github.com/EgorGEgor/HW-Diplom/blob/main/meta.jpg)
+Создаю `playbook Terraform` c блоком провайдера.
+```bash
+vi ~/main.tf
+```
+```terraform
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+}
+```
+![](https://github.com/EgorGEgor/HW-Diplom/blob/main/main.jpg)
 
 
