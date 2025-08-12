@@ -70,4 +70,13 @@ terraform-diplom init
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/init.jpg)
 
+---
+### 1.2 Установка и подготовка Ansible.
+Устанавливаю Ansible и проверяю версию.
+```bash
+apt install ansible
+ansible --version
+```
+![](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible.jpg)
+
 
