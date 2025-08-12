@@ -8,5 +8,6 @@ zcat terraform_1.7.0_linux_amd64.zip > terraform-diplom
 chmod 744 terraform-diplom
 mv terraform-diplom /usr/local/bin/
 terraform-diplom -version
-https://github.com/user-attachments/assets/d7c37d28-afad-43a7-b33d-446fe2874a21
+
+![terraform](https://github.com/user-attachments/assets/e540d0fe-188b-49ab-bbc7-76153962dbe4)
 
