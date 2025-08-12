@@ -83,11 +83,11 @@ ansible --version
 ### 2.1 Заполнение конфигурационного файла terraform `main.tf` для выполнения задач дипломной работы.
 Ссылки на файлы terraform: 
 
-[main.tf](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20terraform/main.tf)
+[main.tf](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/main.tf)
 
-[meta.yaml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20terraform/meta.yaml)
+[meta.yaml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/meta.yaml)
 
-[.terraformrc](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20terraform/terraformrc)
+[.terraformrc](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/terraformrc)
 
 #### По условиям задачи необходимо развернуть через terraform следующий ресурcы:
 
