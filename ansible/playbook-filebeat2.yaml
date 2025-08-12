@@ -14,11 +14,11 @@
   - name: "2/5 download filebeat"
     get_url:
       url: https://mirror.yandex.ru/mirrors/elastic/7/pool/main/f/filebeat/filebeat-7.17.9-amd64.deb
-      dest: "/home/tverdyakov"
+      dest: "/home"
 
   - name: "3/5 dpkg -i filebeat"
     apt:
-      deb: /home/tverdyakov/filebeat-7.17.9-amd64.deb
+      deb: /home/filebeat-7.17.9-amd64.deb
 
   - name: "4/5 copy config file for filebeat"
     copy:
