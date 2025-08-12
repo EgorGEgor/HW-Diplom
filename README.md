@@ -26,7 +26,7 @@ provider_installation {
   }
 }
 ```
-![](![terraform-1](https://github.com/user-attachments/assets/6c2e5c15-0c3c-4b03-85ab-eb60cdcc0298)
+![](https://github.com/EgorGEgor/HW-Diplom/blob/main/terraform-1.jpg)
 
 
 
