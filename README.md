@@ -723,7 +723,7 @@ resource "yandex_compute_snapshot_schedule" "snapshot-diplom" {
 ```bash
 terraform-diplom apply
 ```
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/01.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/1.png)
 
 ---
 
