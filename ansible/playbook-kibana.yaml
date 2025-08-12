@@ -14,11 +14,11 @@
   - name: "2/5 download kibana"
     get_url:
       url: https://mirror.yandex.ru/mirrors/elastic/7/pool/main/k/kibana/kibana-7.17.9-amd64.deb
-      dest: "/home/tverdyakov"
+      dest: "/home"
 
   - name: "3/5 dpkg -i kibana"
     apt:
-      deb: /home/tverdyakov/kibana-7.17.9-amd64.deb
+      deb: /home/kibana-7.17.9-amd64.deb
 
   - name: "4/5 kibana configuration 'kibana.yml'"
     copy:
