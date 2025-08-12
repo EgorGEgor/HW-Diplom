@@ -728,21 +728,19 @@ terraform-diplom apply
 ---
 
 ### 2.3 Проверка развернутых ресурсов в Yandex Cloud.
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/02.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/03.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/04.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/05.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/06.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/07.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/08.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/09.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/10.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/11.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/12.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/13.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/14.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/15.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/16.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/02.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/03.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/04.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/05.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/06.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/07.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/08.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/09.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/10.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/11.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/12.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/13.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/14.png)
 
 #### Все ресурсы через terraform развернуты и работают. 
 
