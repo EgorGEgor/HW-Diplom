@@ -64,5 +64,10 @@ terraform {
 }
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/main.jpg)
+Инициализирую провайдера.
+```bash
+terraform-diplom init
+```
+![](https://github.com/EgorGEgor/HW-Diplom/blob/main/init.jpg)
 
 
