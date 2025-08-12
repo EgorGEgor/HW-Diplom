@@ -33,6 +33,7 @@ provider_installation {
 ssh-keygen -t ed25519
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/ssh.jpg)
+
 Создаю файл `meta.yaml` с данными пользователя на создаваемые ВМ.
 ```bash
 vi ~/meta.yaml
@@ -48,6 +49,7 @@ vi ~/meta.yaml
       - ssh-ed25519
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/meta.jpg)
+
 Создаю `playbook Terraform` c блоком провайдера.
 ```bash
 vi ~/main.tf
