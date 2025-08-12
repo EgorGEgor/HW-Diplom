@@ -28,5 +28,24 @@ provider_installation {
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/terraform-1.jpg)
 
+Для файла с метаданными, `meta.yaml`, необходим публичный SSH-ключ для доступа к ВМ. Для Yandex Cloud рекомендуется использовать алгоритм Ed25519: сгенерированные по нему ключи — самые безопасные. Ссылка: https://cloud.yandex.ru/ru/docs/glossary/ssh-keygen
+```bash
+ssh-keygen -t ed25519
+```
+![](https://github.com/EgorGEgor/HW-Diplom/blob/main/ssh.jpg)
+Создаю файл `meta.yaml` с данными пользователя на создаваемые ВМ.
+```bash
+vi ~/meta.yaml
+```
+```terraform
+#cloud-config
+ users:
+  - name: netology
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-ed25519
+```
 
 
