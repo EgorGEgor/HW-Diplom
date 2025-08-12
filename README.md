@@ -1,6 +1,5 @@
 # HW-Diplom
-## 1.0 Установка и подготовка Terraform и Ansible.
-### 1.1 Установка и подготовка Terraform.
+## Установка и подготовка Terraform и Ansible.
 Скачиваю и распаковываю Terraform с сайта: https://hashicorp-releases.yandexcloud.net/terraform/
 ```bash
 wget https://hashicorp-releases.yandexcloud.net/terraform/1.7.0/terraform_1.7.0_linux_amd64.zip
@@ -11,7 +10,7 @@ terraform-diplom -version
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/terraform.jpg)
 
-Создаю файл `.terraformrc` и добавляю блок с источником, из которого будет устанавливаться провайдер.
+Создаю файл `.terraformrc` и добавляю блок с источником, из которого будет устанавливаться.
 ```bash
 vi ~/.terraformrc
 ```
@@ -71,7 +70,7 @@ terraform-diplom init
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/init.jpg)
 
 ---
-### 1.2 Установка и подготовка Ansible.
+### Установка и подготовка Ansible.
 Устанавливаю Ansible и проверяю версию.
 ```bash
 apt install ansible
@@ -79,8 +78,8 @@ ansible --version
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible.jpg)
 
-## 2.0 Основная часть дипломной работы. Этапы выполнения.
-### 2.1 Заполнение конфигурационного файла terraform `main.tf` для выполнения задач дипломной работы.
+## 
+### Заполнение конфигурационного файла terraform `main.tf`.
 Ссылки на файлы terraform: 
 
 [main.tf](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/main.tf)
@@ -719,7 +718,7 @@ resource "yandex_compute_snapshot_schedule" "snapshot-diplom" {
 
 ---
 
-### 2.2 Запуск terraform playbook.
+### Запуск terraform playbook.
 ```bash
 terraform-diplom apply
 ```
@@ -727,7 +726,7 @@ terraform-diplom apply
 
 ---
 
-### 2.3 Проверка развернутых ресурсов в Yandex Cloud.
+### Проверка развернутых ресурсов в Yandex Cloud.
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/02.png)
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/03.png)
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/04.png)
@@ -740,25 +739,25 @@ terraform-diplom apply
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/11.png)
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/12.png)
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/13.png)
-![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/14.png)
 
-#### Все ресурсы через terraform развернуты и работают. 
+
+#### Все ресурсы через terraform установлены и работают. 
 
 ---
 
-### 2.4 Заполнение конфигурационного файла ansible `ansible.cfg` и inventory `hosts` для выполнения задач дипломной работы.
+### Заполнение конфигурационного файла ansible `ansible.cfg` и inventory `hosts`.
 
 Ссылки на файлы ansible: 
 
-[ansible.cfg](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/ansible.cfg)
+[ansible.cfg](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/ansible.cfg)
 
-[hosts](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/hosts)
+[hosts](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/hosts)
 
-##### `ansible.cfg`. Раскоментировал и заполнил следующие строки.
+##### `ansible.cfg`. Заполнил следующие строки.
 ```ansible
 inventory      = /root/hosts
 host_key_checking = false
-remote_user = tverdyakov
+remote_user = root
 private_key_file = /root/.ssh/id_ed25519
 become=True
 ```
@@ -778,51 +777,51 @@ elasticsearch
 kibana
 
 [nginx-web:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q tverdyakov@51.250.45.187"'
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
 
 [zabbix:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q tverdyakov@51.250.45.187"'
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
 
 [elasticsearch:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q tverdyakov@51.250.45.187"'
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
 
 [kibana:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q tverdyakov@51.250.45.187"'
+ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
 ```
 
 ---
 
-### 2.5 Ansible-playbooks для установки и конфигурирования необходимых сервисов.
+### Ansible-playbooks для установки и конфигурирования необходимых сервисов.
 
 Ссылки на файлы ansible-playbook:
 
-[playbook-nginx-web.yaml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/playbook-nginx-web.yaml)
+[playbook-nginx-web.yaml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/playbook-nginx-web.yaml)
 
-[playbook-zabbix.yaml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/playbook-zabbix.yaml)
+[playbook-zabbix.yaml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/playbook-zabbix.yaml)
 
-[playbook-zabbix-agent.yaml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/playbook-zabbix-agent.yaml)
+[playbook-zabbix-agent.yaml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/playbook-zabbix-agent.yaml)
 
-[playbook-elasticsearch.yaml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/playbook-elasticsearch.yaml)
+[playbook-elasticsearch.yaml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/playbook-elasticsearch.yaml)
 
-[playbook-kibana.yaml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/playbook-kibana.yaml)
+[playbook-kibana.yaml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/playbook-kibana.yaml)
 
-[playbook-filebeat.yaml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/playbook-filebeat.yaml)
+[playbook-filebeat.yaml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/playbook-filebeat.yaml)
 
-[playbook-filebeat2.yaml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/playbook-filebeat2.yaml)
+[playbook-filebeat2.yaml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/playbook-filebeat2.yaml)
 
 Ссылка на файл с сайтом: 
 
-[index.nginx-debian.html](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/index.nginx-debian.html)
+[index.nginx-debian.html](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/index.nginx-debian.html)
 
 Ссылки на конфигурационные файлы: 
 
-[elasticsearch.yml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/elasticsearch.yml)
+[elasticsearch.yml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/elasticsearch.yml)
 
-[kibana.yml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/kibana.yml)
+[kibana.yml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/kibana.yml)
 
-[filebeat.yml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/filebeat.yml)
+[filebeat.yml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/filebeat.yml)
 
-[filebeat2.yml](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/files%20ansible/filebeat2.yml)
+[filebeat2.yml](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/filebeat2.yml)
 
 ##### Сайт. Веб-сервера. Nginx.
   
