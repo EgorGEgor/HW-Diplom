@@ -819,6 +819,7 @@ terraform-diplom apply
 ```
 ```bash
 ansible-playbook playbook-nginx-web.yaml
+```
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/17.png)
 
 ##### Мониторинг. Zabbix. Zabbix-agent.
