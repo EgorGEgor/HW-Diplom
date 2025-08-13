@@ -27,13 +27,14 @@ provider_installation {
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/terraform-1.jpg)
 
-Для файла с метаданными, `meta.yaml`, необходим публичный SSH-ключ для доступа к ВМ. Для Yandex Cloud рекомендуется использовать алгоритм Ed25519: сгенерированные по нему ключи — самые безопасные. Ссылка: https://cloud.yandex.ru/ru/docs/glossary/ssh-keygen
+Для файла с метаданными `meta.yaml` генерирую публичный SSH-ключ `meta.yaml`
+Ссылка: https://cloud.yandex.ru/ru/docs/glossary/ssh-keygen
 ```bash
 ssh-keygen -t ed25519
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/ssh.jpg)
 
-Создаю файл `meta.yaml` с данными пользователя на создаваемые ВМ.
+Создаю файл `meta.yaml` на создаваемые ВМ.
 ```bash
 vi ~/meta.yaml
 ```
@@ -49,7 +50,7 @@ vi ~/meta.yaml
 ```
 ![](https://github.com/EgorGEgor/HW-Diplom/blob/main/meta.jpg)
 
-Создаю `playbook Terraform` c блоком провайдера.
+Создаю `playbook Terraform`.
 ```bash
 vi ~/main.tf
 ```
@@ -88,7 +89,7 @@ ansible --version
 
 [.terraformrc](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/terraformrc)
 
-#### По условиям задачи необходимо развернуть через terraform следующий ресурcы:
+#### По условиям задачи необходимо развернуть через terraform следующие ресурcы:
 
 ##### Сайт. Веб-сервера. Nginx.
 - Создать две ВМ в разных зонах, установить на них сервер nginx.
@@ -820,7 +821,7 @@ terraform-diplom apply
 
 ##### Мониторинг. Zabbix. Zabbix-agent.
 
-Разворачиваю Zabbix.
+Устанавливаю Zabbix.
 ```ansible
 ---
 - name: "download and install zabbix"
@@ -919,7 +920,7 @@ terraform-diplom apply
 
 ##### Логи. Elasticsearch. Kibana. Filebeat.
 
-Разворачиваю на ВМ Elasticsearch.
+Устанавливаю на ВМ Elasticsearch.
 ```ansible
 ---
 - name: "download and install elasticsearch"
@@ -956,7 +957,7 @@ terraform-diplom apply
 ```
 
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/20.png) 
-Разворачиваю на другой ВМ Kibana, конфигурирую соединение с Elasticsearch.
+Устанавливаю на другой ВМ Kibana, конфигурирую соединение с Elasticsearch.
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/21.png) 
 
 ```ansible
@@ -1107,16 +1108,15 @@ curl -v 158.160.128.179:80
 
 Логи отправляются.
 
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/43.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/44.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/43.png)
+
 
 ##### Резервное копирование.
-Резервное копирование настроено на 1:30, но фактически оно будет в 4:30 из-за разницы во времени на серверах Yandex Cloud.
+Резервное копирование настроено на 14:30.
 
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/14.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/15.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/16.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/13.png)
 
-[Ссылка на заключительную часть дипломной работы.](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/03_Заключительная%20часть%20дипломной%20работы/README.md)
+
+
 
 
