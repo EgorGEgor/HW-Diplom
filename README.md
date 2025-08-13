@@ -753,42 +753,6 @@ terraform-diplom apply
 
 [hosts](https://github.com/EgorGEgor/HW-Diplom/blob/main/ansible/hosts)
 
-##### `ansible.cfg`. Заполнил следующие строки.
-```ansible
-inventory      = /root/hosts
-host_key_checking = false
-remote_user = root
-private_key_file = /root/.ssh/id_ed25519
-become=True
-```
-##### `hosts`. Настроил подключение к ресурсам через ProxyCommand.
-```ansible
-[nginx-web]
-nginx-web-1
-nginx-web-2
-
-[zabbix]
-zabbix
-
-[elasticsearch]
-elasticsearch
-
-[kibana]
-kibana
-
-[nginx-web:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
-
-[zabbix:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
-
-[elasticsearch:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
-
-[kibana:vars]
-ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
-```
-
 ---
 
 ### Ansible-playbooks для установки и конфигурирования необходимых сервисов.
@@ -992,7 +956,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
 ```
 
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/20.png) 
-Разворачиваю на другой ВМ Kibana, конфигурирую соединение с Elasticsearch и добавляю параметр `server.publicBaseUrl: "http://51.250.37.133:5601"` в конфигурационный файл `kibana.yml` так как при входе в kibana выскакивает следующее сообщение: `server.publicBaseUrl is missing and should be configured when running in a production environment. Some features may not behave correctly.`
+Разворачиваю на другой ВМ Kibana, конфигурирую соединение с Elasticsearch.
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/21.png) 
 
 ```ansible
@@ -1108,35 +1072,22 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
 
 ---
 
-### 2.6 Проверка и настройка ресурсов для выполнения задач дипломной работы.
-
 ##### Сайт.
 Протестирую работу сайта с ip балансировщика.
 ```bash
 curl -v 158.160.128.179:80
 ```
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/25.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/25.png)
 
 Этот же сайт с браузера.
 
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/26.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/26.png)
 
 ##### Мониторинг.
 Проверка работы Zabbix. Перехожу на страницу с Zabbix `http://51.250.43.208/zabbix`.
 
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/27.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/28.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/29.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/30.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/31.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/32.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/33.png)
-
-Логин: Admin
-
-Пароль: zabbix
-
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/34.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/27.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/34.png)
 
 Создаю Template, а точнее редактирую наиболее подходящий, с необходимыми метриками.
 
