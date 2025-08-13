@@ -1053,7 +1053,7 @@ terraform-diplom apply
 
   - name: "3/5 dpkg -i filebeat"
     apt:
-      deb: /homefilebeat-7.17.9-amd64.deb
+      deb: /home/filebeat-7.17.9-amd64.deb
 
   - name: "4/5 copy config file for filebeat"
     copy:
@@ -1073,7 +1073,7 @@ terraform-diplom apply
 ---
 
 ##### Сайт.
-Протестирую работу сайта с ip балансировщика.
+Тест работы сайта.
 ```bash
 curl -v 158.160.128.179:80
 ```
@@ -1084,7 +1084,7 @@ curl -v 158.160.128.179:80
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/26.png)
 
 ##### Мониторинг.
-Проверка работы Zabbix. Перехожу на страницу с Zabbix `http://51.250.43.208/zabbix`.
+Проверка работы Zabbix.
 
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/27.png)
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/34.png)
