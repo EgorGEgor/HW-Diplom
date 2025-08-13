@@ -852,7 +852,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
       name: nginx
       state: restarted
 ```
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/17.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/17.png)
 
 ##### Мониторинг. Zabbix. Zabbix-agent.
 
@@ -876,11 +876,11 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
   - name: "3/8 download zabbix"
     get_url:
       url: https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-5+debian12_all.deb
-      dest: "/home/tverdyakov"
+      dest: "/home"
 
   - name: "4/8 dpkg -i zabbix"
     apt:
-      deb: /home/tverdyakov/zabbix-release_6.0-5+debian12_all.deb
+      deb: /home/zabbix-release_6.0-5+debian12_all.deb
 
   - name: "5/8 apt update"
     apt:
@@ -909,7 +909,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
       systemctl restart zabbix-server apache2
       systemctl enable zabbix-server apache2
 ```
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/18.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/18.png)
 
 На каждую ВМ устанавливаю Zabbix Agent, настраиваю агенты на отправление метрик в Zabbix.
 
@@ -928,11 +928,11 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
   - name: "2/7 download zabbix-agent"
     get_url:
       url: https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-5+debian12_all.deb
-      dest: "/home/tverdyakov"
+      dest: "/home"
 
   - name: "3/7 dpkg -i zabbix-agent"
     apt:
-      deb: /home/tverdyakov/zabbix-release_6.0-5+debian12_all.deb
+      deb: /home/zabbix-release_6.0-5+debian12_all.deb
 
   - name: "4/7 apt update"
     apt:
@@ -951,7 +951,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
       systemctl restart zabbix-agent
       systemctl enable zabbix-agent
 ```
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/19.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/19.png)
 
 ##### Логи. Elasticsearch. Kibana. Filebeat.
 
@@ -973,11 +973,11 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
   - name: "2/5 download elasticsearch"
     get_url:
       url: https://mirror.yandex.ru/mirrors/elastic/7/pool/main/e/elasticsearch/elasticsearch-7.17.9-amd64.deb
-      dest: "/home/tverdyakov"
+      dest: "/home"
 
   - name: "3/5 dpkg -i elasticsearch"
     apt:
-      deb: /home/tverdyakov/elasticsearch-7.17.9-amd64.deb
+      deb: /home/elasticsearch-7.17.9-amd64.deb
 
   - name: "4/5 elasticsearch configuration 'elasticsearch.yml'"
     copy:
@@ -991,9 +991,9 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
       systemctl start elasticsearch.service
 ```
 
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/20.png) 
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/20.png) 
 Разворачиваю на другой ВМ Kibana, конфигурирую соединение с Elasticsearch и добавляю параметр `server.publicBaseUrl: "http://51.250.37.133:5601"` в конфигурационный файл `kibana.yml` так как при входе в kibana выскакивает следующее сообщение: `server.publicBaseUrl is missing and should be configured when running in a production environment. Some features may not behave correctly.`
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/21.png) 
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/21.png) 
 
 ```ansible
 ---
@@ -1012,11 +1012,11 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
   - name: "2/5 download kibana"
     get_url:
       url: https://mirror.yandex.ru/mirrors/elastic/7/pool/main/k/kibana/kibana-7.17.9-amd64.deb
-      dest: "/home/tverdyakov"
+      dest: "/home"
 
   - name: "3/5 dpkg -i kibana"
     apt:
-      deb: /home/tverdyakov/kibana-7.17.9-amd64.deb
+      deb: /home/kibana-7.17.9-amd64.deb
 
   - name: "4/5 kibana configuration 'kibana.yml'"
     copy:
@@ -1029,7 +1029,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
       systemctl enable kibana.service
       systemctl start kibana.service
 ```
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/22.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/22.png)
 
 Устанавливаю Filebeat в ВМ к веб-серверам, настраиваю на отправку access.log, error.log nginx в Elasticsearch.
 
@@ -1050,11 +1050,11 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
   - name: "2/5 download filebeat"
     get_url:
       url: https://mirror.yandex.ru/mirrors/elastic/7/pool/main/f/filebeat/filebeat-7.17.9-amd64.deb
-      dest: "/home/tverdyakov"
+      dest: "/home"
 
   - name: "3/5 dpkg -i filebeat"
     apt:
-      deb: /home/tverdyakov/filebeat-7.17.9-amd64.deb
+      deb: /home/filebeat-7.17.9-amd64.deb
 
   - name: "4/5 copy config file for filebeat"
     copy:
@@ -1067,7 +1067,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
       systemctl enable filebeat.service
       systemctl start filebeat.service
 ```
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/23.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/23.png)
 ```ansible
 ---
 - name: "download and install filebeat for nginx-web-2"
@@ -1085,11 +1085,11 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
   - name: "2/5 download filebeat"
     get_url:
       url: https://mirror.yandex.ru/mirrors/elastic/7/pool/main/f/filebeat/filebeat-7.17.9-amd64.deb
-      dest: "/home/tverdyakov"
+      dest: "/home"
 
   - name: "3/5 dpkg -i filebeat"
     apt:
-      deb: /home/tverdyakov/filebeat-7.17.9-amd64.deb
+      deb: /homefilebeat-7.17.9-amd64.deb
 
   - name: "4/5 copy config file for filebeat"
     copy:
@@ -1102,7 +1102,7 @@ ansible_ssh_common_args='-o ProxyCommand="ssh -W %h:%p -q root@51.250.45.187"'
       systemctl enable filebeat.service
       systemctl start filebeat.service
 ```
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/24.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/24.png)
 
 #### Все сервисы через ansible развернуты.
 
