@@ -825,9 +825,7 @@ ansible-playbook playbook-nginx-web.yaml
 ##### Мониторинг. Zabbix. Zabbix-agent.
 
 Устанавливаю Zabbix.
-```bash
-ansible-playbook playbook-zabix.yaml
-```
+
 ```ansible
 ---
 - name: "download and install zabbix"
@@ -880,12 +878,13 @@ ansible-playbook playbook-zabix.yaml
       systemctl restart zabbix-server apache2
       systemctl enable zabbix-server apache2
 ```
+```bash
+ansible-playbook playbook-zabix.yaml
+```
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/18.png)
 
 На каждую ВМ устанавливаю Zabbix Agent, настраиваю агенты на отправление метрик в Zabbix.
-```bash
-ansible-playbook playbook-zabbix-agent.yaml
-```
+
 ```ansible
 ---
 - name: "download and install zabbix-agent"
@@ -924,14 +923,15 @@ ansible-playbook playbook-zabbix-agent.yaml
       systemctl restart zabbix-agent
       systemctl enable zabbix-agent
 ```
+```bash
+ansible-playbook playbook-zabbix-agent.yaml
+```
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/19.png)
 
 ##### Логи. Elasticsearch. Kibana. Filebeat.
 
 Устанавливаю на ВМ Elasticsearch.
-```bash
-ansible-playbook playbook-elasticsearch.yaml
-```
+
 ```ansible
 ---
 - name: "download and install elasticsearch"
@@ -966,13 +966,13 @@ ansible-playbook playbook-elasticsearch.yaml
       systemctl enable elasticsearch.service
       systemctl start elasticsearch.service
 ```
-
+```bash
+ansible-playbook playbook-elasticsearch.yaml
+```
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/20.png) 
 Устанавливаю на другой ВМ Kibana, конфигурирую соединение с Elasticsearch.
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/21.png) 
-```bash
-ansible-playbook playbook-kibana.yaml
-```
+
 
 ```ansible
 ---
@@ -1008,12 +1008,13 @@ ansible-playbook playbook-kibana.yaml
       systemctl enable kibana.service
       systemctl start kibana.service
 ```
+```bash
+ansible-playbook playbook-kibana.yaml
+```
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/22.png)
 
 Устанавливаю Filebeat в ВМ к веб-серверам, настраиваю на отправку access.log, error.log nginx в Elasticsearch.
-```bash
-ansible-playbook playbook-filebeat.yaml
-```
+
 ```ansible
 ---
 - name: "download and install filebeat for nginx-web-1"
@@ -1048,10 +1049,11 @@ ansible-playbook playbook-filebeat.yaml
       systemctl enable filebeat.service
       systemctl start filebeat.service
 ```
-![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/23.png)
 ```bash
-ansible-playbook playbook-filebaet2.yaml
+ansible-playbook playbook-filebeat.yaml
 ```
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/23.png)
+
 ```ansible
 ---
 - name: "download and install filebeat for nginx-web-2"
@@ -1085,6 +1087,9 @@ ansible-playbook playbook-filebaet2.yaml
       systemctl deamon-reload
       systemctl enable filebeat.service
       systemctl start filebeat.service
+```
+```bash
+ansible-playbook playbook-filebaet2.yaml
 ```
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/24.png)
 
