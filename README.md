@@ -1096,14 +1096,14 @@ curl -v 158.160.128.179:80
 ##### Логи.
 Захожу в kibana `http://51.250.37.133:5601/`
 
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/38.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/38.png)
 
 Создаю Index patterns.
 
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/39.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/40.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/41.png)
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/42.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/39.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/40.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/41.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/42.png)
 
 Логи отправляются.
 
