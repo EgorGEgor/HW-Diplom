@@ -1089,17 +1089,9 @@ curl -v 158.160.128.179:80
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/27.png)
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/34.png)
 
-Создаю Template, а точнее редактирую наиболее подходящий, с необходимыми метриками.
+Настраенные дашборды
 
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/35.png)
-
-Добавляю сервера.
-
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/36.png)
-
-Настраиваю дешборды с отображением метрик, минимальный набор — по принципу USE (Utilization, Saturation, Errors) для CPU, RAM, диски, сеть, http запросов к веб-серверам.
-
-![png](https://github.com/tverdyakov/diplom_tverdyakov-sys-20/blob/main/02_Основная%20часть%20дипломной%20работы/screenshots/37.png)
+![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/35.png)
 
 ##### Логи.
 Захожу в kibana `http://51.250.37.133:5601/`
