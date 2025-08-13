@@ -1140,6 +1140,8 @@ curl -v 158.160.128.179:80
 
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/13.png)
 
+##### Дипломнная работа закончена.
+
 
 
 
