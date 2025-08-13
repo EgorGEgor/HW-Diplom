@@ -790,7 +790,7 @@ terraform-diplom apply
 
 ##### Сайт. Веб-сервера. Nginx.
   
-Устанавливаю сервер nginx на 2 ВМ. Заменяю стандартный файл `index.nginx-debian.html`
+Устанавливаю сервер nginx на 2 ВМ. 
 ```ansible
 ---
 - name: "install nginx --> replacing a file index.nginx-debian.html --> restart nginx"
@@ -817,6 +817,8 @@ terraform-diplom apply
       name: nginx
       state: restarted
 ```
+```bash
+ansible-playbook playbook-nginx-web.yaml
 ![png](https://github.com/EgorGEgor/HW-Diplom/blob/main/screenshot/17.png)
 
 ##### Мониторинг. Zabbix. Zabbix-agent.
